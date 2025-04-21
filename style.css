@@ -1,0 +1,210 @@
+/* 
+ * Custom Style Stage Design by Seerat Thakur
+ * Date: April 2025
+ * Fonts: 'Poppins' via Google Fonts (https://fonts.google.com/)
+ * Patterns: Hero Patterns (https://www.heropatterns.com/)
+ * Icons: GitHub SVG from original Style Stage HTML
+ */
+
+/* === GOOGLE FONT IMPORT === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  /* === Color Scheme === */
+  --primary: #0066cc;
+  --secondary: #ff5c57;
+  --background: #f7f9fc;
+  --text: #1f1f1f;
+  --light: #ffffff;
+
+  /* === Typography === */
+  --font-base: 'Poppins', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+
+  --line-height: 1.7;
+  --letter-spacing: 0.02em;
+}
+
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--background);
+  color: var(--text);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  padding: 1rem;
+}
+
+/* === HEADINGS === */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing);
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+/* === LINKS === */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+}
+header h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* === NAVIGATION === */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--light);
+  list-style: none;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav li a {
+  font-weight: 600;
+  color: var(--secondary);
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+nav li a:hover {
+  border-bottom: 2px solid var(--primary);
+}
+
+/* === MAIN CONTAINER === */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* === ARTICLE STYLING === */
+article section {
+  padding: 2rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+section:last-child {
+  border-bottom: none;
+}
+
+/* === BLOCKQUOTE === */
+blockquote {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #eaf4ff;
+  border-left: 4px solid var(--primary);
+  font-style: italic;
+}
+
+/* === FEATURED STYLES SECTION === */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.features li {
+  background-color: var(--secondary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* === FOOTER === */
+.page-footer {
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.page-footer a {
+  color: var(--light);
+}
+
+/* === SKIP LINK === */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--secondary);
+  color: white;
+  padding: 0.5rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* === RESPONSIVE LAYOUTS === */
+
+/* Small screens (mobile-first approach) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium and large screens (desktop) */
+@media (min-width: 769px) {
+  nav ul {
+    flex-direction: row;
+  }
+
+  header {
+    padding: 4rem;
+  }
+
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
